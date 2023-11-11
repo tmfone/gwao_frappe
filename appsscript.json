@@ -1,0 +1,53 @@
+{
+  "oauthScopes": [
+    "https://www.googleapis.com/auth/gmail.addons.execute",
+    "https://www.googleapis.com/auth/gmail.addons.current.message.metadata",
+    "https://www.googleapis.com/auth/gmail.modify",
+    "https://www.googleapis.com/auth/drive.addons.metadata.readonly",
+    "https://www.googleapis.com/auth/drive.readonly",
+    "https://www.googleapis.com/auth/script.external_request"
+  ],
+  "addOns": {
+    "common": {
+      "homepageTrigger": {
+        "runFunction": "getMain",
+        "enabled": true
+      },
+      "layoutProperties": {
+        "primaryColor": "#2F972B"
+      },
+      "logoUrl": "https://storage.googleapis.com/tmfone-gsuite-app-assets/images/frappe_technologies_logo.jpeg",
+      "name": "Integrate to Frappe",
+      "openLinkUrlPrefixes": [
+        "https://mail.google.com/",
+        "https://lab.tmf.one/"
+      ],
+      "universalActions": [
+        {
+          "label": "Open settings",
+          "runFunction": "getSettingsCard"
+        }
+      ]
+    },
+    "gmail": {
+      "contextualTriggers": [
+        {
+          "unconditional": {},
+          "onTriggerFunction": "getMain"
+        }
+      ]
+    }
+  },
+  "timeZone": "Europe/Vienna",
+  "dependencies": {
+    "libraries": [
+      {
+        "userSymbol": "OAuth2",
+        "version": "43",
+        "libraryId": "1B7FSrk5Zi6L1rSxxTDgDEUsPzlukDsi4KGuTMorsTQHhGBzBkMun4iDF"
+      }
+    ]
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
